@@ -1,7 +1,17 @@
 package calculator;
 
-import java.math.BigDecimal;
-import java.math.RoundingMode;
+// import math java modules
+import java.math.*;
+
+/**
+ * @see Operation Class
+ * 
+ * @summary: declare all method fn for operatoion, that is: addition, division,
+ *           substraction, multiplication, modulus. Each method function must
+ *           return value after calculation. every method fn have a array double
+ *           parameter from Features class.
+ * 
+ */
 
 public class Operation {
 
@@ -9,7 +19,6 @@ public class Operation {
         BigDecimal number1 = new BigDecimal(Double.toString(arrayNum[0]));
         BigDecimal number2 = new BigDecimal(Double.toString(arrayNum[1]));
         return number1.add(number2).doubleValue();
-        // return ((double) arrayNum[0] + (double) arrayNum[1]);
     }
 
     public static double useDiv(double[] arrayNum) {
@@ -34,7 +43,6 @@ public class Operation {
         BigDecimal number1 = new BigDecimal(Double.toString(arrayNum[0]));
         BigDecimal number2 = new BigDecimal(Double.toString(arrayNum[1]));
         return number1.remainder(number2).doubleValue();
-        // return ((double) arrayNum[0] % (double) arrayNum[1]);
     }
 
 }

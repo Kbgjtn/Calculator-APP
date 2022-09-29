@@ -1,8 +1,23 @@
 package calculator;
 
+// import utils java modules
 import java.util.*;
 
+/**
+ * @see Features Class
+ * @hidden: every failed input fields must be push at Stack errMessage and the
+ *          user recently activity must be push at logs Stack
+ * 
+ * @summary: method UseInputOption listening of user input, then call
+ *           the useFeatureOperation method fn. In useFeatureOperation method
+ *           fn, using the switch to select one of many code blocks to be
+ *           executed.
+ * 
+ */
+
 public class Features {
+
+    // declare members of Feature Class
     public static double total;
     public static String brainDump;
     public static Stack<String> logs = new Stack<>();
@@ -73,8 +88,6 @@ public class Features {
 
                     }
 
-                    brainDump = "";
-                    clearConsole();
                     continue;
                 }
 
@@ -150,21 +163,19 @@ public class Features {
                 total = Operation.useModulo(arrayNum);
                 break;
 
+            // carefully if the not catched the choose of 6 opt in menu
             case "6":
                 total *= 0;
                 break;
 
             default:
                 break;
-
         }
-
     }
 
     public static void displayFeatures() {
 
         System.out.println();
-
         System.out.println("\n\t\t\t ");
         System.out.println("\n\t\t    - CALCULATOR APP -\n");
         System.out.println("\n\t Feautures Menu:\n");
@@ -176,7 +187,6 @@ public class Features {
         System.out.println("\t [6] Reset");
         System.out.println("\t [0] Exit");
         if (!logs.empty()) {
-            // System.out.println(.length);
             System.out.println("\n\n\t Recent Activity : \n\t   [");
             for (String log : logs) {
                 System.out.println("\t\t" + log + ",");
@@ -195,10 +205,9 @@ public class Features {
         System.out.print("\nSelect Features u wanna use!");
         System.out.print("\n>> ");
 
-        // System.out.println("\n- - - - - - - - - - - - - - - - - - - - - - - - - - - -
-        // - \n");
     }
 
+    // method for clear of user console
     public static void clearConsole() {
         System.out.println("\033[H\033[2J");
         System.out.flush();
